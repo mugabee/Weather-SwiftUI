@@ -12,7 +12,7 @@ struct ContentView: View {
         // HERE IN z STACK WE ARE GOING TO BUILD A BACKGROUND
         ZStack {
             //LinearGradient is the fastest way to define mixed color
-            LinearGradient(gradient: Gradient(colors: [.blue, .white]),
+            LinearGradient(gradient: Gradient(colors: [.blue, Color("lightBlue")]),
                            startPoint: .topLeading,
                            endPoint: .bottomLeading)
             .edgesIgnoringSafeArea(.all)
@@ -28,12 +28,13 @@ struct ContentView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 180, height: 180 )
+                    
                     Text("23°")
                         .font(.system(size: 70, weight: .medium ))
                         .foregroundColor(.white)
                     
                 }
-                Spacer()
+                .padding(.bottom, 40)
                 HStack(spacing: 20) {
                     WeatherDayView(dayOfWeek: "TUE",
                                    imageName: "sunset.fill",
@@ -51,6 +52,19 @@ struct ContentView: View {
                                    imageName: "cloud.sun.fill",
                                    temperature: 22)
                 }
+                Spacer()
+                
+                Button {
+                    print("tapped")
+                    
+                } label: {
+                    Text("change Day Time")
+                        .frame(width: 200, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(Color.white)
+                        .font(.system(size: 20, weight: .bold, design: .default))
+                        .cornerRadius(10)
+                }
+                
                 Spacer()
                    
             }
