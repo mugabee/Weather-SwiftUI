@@ -18,7 +18,7 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.all)
       //the safearea is there to fill the color around the adge parts of our phone
             VStack {
-                Text("Kigali, Rw")
+                Text("KIGALI, RW")
                     .font(.system(size: 32, weight: .medium, design: .default))
                     .foregroundColor(.white)
                     .padding()
@@ -34,6 +34,24 @@ struct ContentView: View {
                     
                 }
                 Spacer()
+                HStack(spacing: 20) {
+                    WeatherDayView(dayOfWeek: "TUE",
+                                   imageName: "sunset.fill",
+                                   temperature: 21)
+                    WeatherDayView(dayOfWeek: "WED",
+                                   imageName: "sun.max.fill",
+                                   temperature: 25)
+                    WeatherDayView(dayOfWeek: "THU",
+                                   imageName: "cloud.rain.fill",
+                                   temperature: 23)
+                    WeatherDayView(dayOfWeek: "FRI",
+                                   imageName: "cloud.sun.rain.fill",
+                                   temperature: 24)
+                    WeatherDayView(dayOfWeek: "SAT",
+                                   imageName: "cloud.sun.fill",
+                                   temperature: 22)
+                }
+                Spacer()
                    
             }
             
@@ -44,5 +62,27 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct WeatherDayView: View {
+    var dayOfWeek: String
+    var imageName: String
+    var temperature: Int
+    var body: some View {
+        VStack {
+            Text(dayOfWeek)
+                .font(.system(size: 16, weight: .medium, design: .default))
+                .foregroundColor(.white)
+            Image(systemName: imageName)
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40 )
+            Text("\(temperature)°")
+                .font(.system(size: 28, weight: .medium ))
+                .foregroundColor(.white)
+            
+        }
     }
 }
