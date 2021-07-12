@@ -18,10 +18,21 @@ struct ContentView: View {
             .edgesIgnoringSafeArea(.all)
       //the safearea is there to fill the color around the adge parts of our phone
             VStack {
-                Text("Cupertino, CA")
+                Text("Kigali, Rw")
                     .font(.system(size: 32, weight: .medium, design: .default))
                     .foregroundColor(.white)
                     .padding()
+                VStack(spacing: 10) {
+                    Image(systemName: "cloud.sun.fill")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 180, height: 180 )
+                    Text("23°")
+                        .font(.system(size: 70, weight: .medium ))
+                        .foregroundColor(.white)
+                    
+                }
                 Spacer()
                    
             }
