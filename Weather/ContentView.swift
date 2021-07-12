@@ -12,10 +12,19 @@ struct ContentView: View {
         // HERE IN z STACK WE ARE GOING TO BUILD A BACKGROUND
         ZStack {
             //LinearGradient is the fastest way to define mixed color
-            LinearGradient(gradient: Gradient(colors: [.blue, .white]), startPoint: .topLeading, endPoint: .bottomLeading)
+            LinearGradient(gradient: Gradient(colors: [.blue, .white]),
+                           startPoint: .topLeading,
+                           endPoint: .bottomLeading)
             .edgesIgnoringSafeArea(.all)
       //the safearea is there to fill the color around the adge parts of our phone
-                
+            VStack {
+                Text("Cupertino, CA")
+                    .font(.system(size: 32, weight: .medium, design: .default))
+                    .foregroundColor(.white)
+                    .padding()
+                Spacer()
+                   
+            }
             
         }
     }
