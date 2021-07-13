@@ -2,7 +2,7 @@
 //  WeatherApp.swift
 //  Weather
 //
-//  Created by MUGABE RICHARD on 12/07/2021.
+//  Created by MUGABE RICHARD on 13/07/2021.
 //
 
 import SwiftUI
